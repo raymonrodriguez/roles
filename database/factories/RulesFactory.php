@@ -24,7 +24,8 @@ class RulesFactory extends Factory
             'model_id' => Model::all()->random()->id,
             'module_id' => Module::all()->random()->id,
             'user_id' => User::all()->random()->id,
-            'permission_id' => Permission::all()->random()->id
+            'permission_id' => Permission::all()->random()->id,
+            'user_id' => User::all()->random()->id
         ];
     }
 }
