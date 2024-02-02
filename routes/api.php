@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\vacancy as VacancyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
-
 });
 
 
-Route::get('roles',function(User $user){
-   return auth()->user();
+Route::get('vacancy', [VacancyController::class, 'index'])->middleware('auth:sanctum');
+
+
+
+
+Route::get('roles', function (User $user) {
+    return auth()->user()->roles;
+})->middleware('auth:sanctum');
+
+
+
+Route::get('roles', function (User $user) {
+    return auth()->user()->roles;
+})->middleware('auth:sanctum');
+
+
+Route::get('roles', function (User $user) {
+    return auth()->user()->roles;
 })->middleware('auth:sanctum');

@@ -10,6 +10,8 @@ class Rule extends Model
 {
     use HasFactory;
 
+    protected $table = 'rules';
+
     public function model()
     {
         return $this->belongsTo(ModelsModel::class);

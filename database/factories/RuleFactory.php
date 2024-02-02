@@ -5,13 +5,14 @@ namespace Database\Factories;
 use App\Models\Model;
 use App\Models\Module;
 use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class RulesFactory extends Factory
+class RuleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -25,7 +26,8 @@ class RulesFactory extends Factory
             'module_id' => Module::all()->random()->id,
             'user_id' => User::all()->random()->id,
             'permission_id' => Permission::all()->random()->id,
-            'user_id' => User::all()->random()->id
+            'user_id' => User::all()->random()->id,
+            'role_id' => Role::all()->random()->id
         ];
     }
 }

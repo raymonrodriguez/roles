@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\vacancy;
+use App\Models\Vacancy as ModelsVacancy;
+use App\Policies\VacancyPolicy;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+       ModelsVacancy::class => VacancyPolicy::class,
     ];
 
     /**

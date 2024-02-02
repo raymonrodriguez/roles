@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\RolePermission::factory(5)->create();
         \App\Models\ModelPermission::factory(5)->create();
+        \App\Models\Rule::factory(5)->create();
         \App\Models\RoleUser::factory(5)->create();
 
 

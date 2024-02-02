@@ -9,6 +9,11 @@ class Role extends Model
 {
     use HasFactory;
 
+    const TeamLeader = 1;
+    const Vendedor = 2;
+    const operador = 3;
+    const callcenter = 4;
+
     public function users()
     {
         return $this->belongsToMany(User::class);

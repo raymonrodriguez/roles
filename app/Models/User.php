@@ -53,8 +53,19 @@ class User extends Authenticatable
         return $this->hasMany(Rule::class);
     }
 
-    public function hasRole(int $role_id): bool
+    public function hasRulesRole(int $role_id): bool
     {
-        return $this->roles->flatMap->contains('id', $role_id);
+        return $this->rules->contains('role_id', $role_id);
     }
+
+    public function hasRulesModule(int $module_id): bool
+    {
+       return $this->rules->contains('module_id', $module_id);
+    }
+
+    public function hasRulesModel(int $model_id): bool
+    {
+        return $this->rules->contains('model_id', $model_id);
+    }
+
 }
